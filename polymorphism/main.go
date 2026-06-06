@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	_ "fmt"
 	"polymorphism/rectangle"
 	"polymorphism/square"
 	"reflect"
