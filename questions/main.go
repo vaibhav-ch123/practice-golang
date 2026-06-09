@@ -7,5 +7,7 @@ func main() {
 	// count_increment()
 	// wordCount()
 	// printnumber()
-	printevenodd()
+	// printevenodd()
+	// goroutinepanicandrecovery()
+	studentexamproccesssystem()
 }
