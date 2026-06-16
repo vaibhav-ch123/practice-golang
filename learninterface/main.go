@@ -31,6 +31,10 @@ func main() {
 	// s1.function1()
 	// s1.function2()
 
-	var i2 interface{}
-	fmt.Printf("type of interface %T and value %v\n", i2, i2)
+	s2 := new_struct1{4, "hello"}
+	s2.function1()
+	s2.function2()
+
+	// var i2 interface{}
+	// fmt.Printf("type of interface %T and value %v\n", i2, i2)
 }

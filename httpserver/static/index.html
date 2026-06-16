@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> calories burn calculater</h1>
+    <form id="calorieForm">
+      <input type="text" id="weight" placeholder="Weight">
+      <input type="text" id="steps" placeholder="Steps">
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+    <script>
+document.getElementById("calorieForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const weight = document.getElementById("weight").value;
+    const steps = document.getElementById("steps").value;
+
+    const response = await fetch("/calculate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            weight: weight,
+            steps: steps
+        })
+    });
+
+    const data = await response.json();
+
+    document.getElementById("result").innerText =
+        `Calories Burned: ${data.calories}`;
+});
+</script>
+</body>
+</html>
